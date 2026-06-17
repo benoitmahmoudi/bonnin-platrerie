@@ -4,17 +4,17 @@
   Site de Michel Bonnin (Michel Bonnin Plâtrerie Plomberie) · VERSION BROUILLON pour avis.
   Coordonnées réelles : tel 06 22 83 17 30, email bonninmichel31@gmail.com.
   À compléter avec Michel : vraies photos de chantiers (les images sont des illustrations),
-  avis (viendront de la fiche Google), liste exacte des services, nom définitif de l'entreprise.
+  avis (viendront de la fiche Google), nom définitif de l'entreprise (recréation septembre 2026).
 -->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Plaquiste plombier à Labastide Saint Pierre | Michel Bonnin Plâtrerie Plomberie</title>
-  <meta name="description" content="Michel Bonnin Plâtrerie Plomberie, plaquiste et plombier à Labastide Saint Pierre, Campsas et alentours. Devis gratuit, intervention rapide, travail soigné. Appelez le 06 22 83 17 30.">
+  <meta name="description" content="Michel Bonnin Plâtrerie Plomberie, plaquiste et plombier à Labastide Saint Pierre, Campsas et alentours. Devis gratuit, intervention rapide, travail soigné et garanti. Appelez le 06 22 83 17 30.">
   <meta name="robots" content="noindex, follow">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Michel Bonnin Plâtrerie Plomberie · Plaquiste & Plombier à Labastide Saint Pierre">
-  <meta property="og:description" content="Devis gratuit, intervention rapide, travail soigné. Appelez le 06 22 83 17 30.">
+  <meta property="og:description" content="Devis gratuit, intervention rapide, travail soigné. Plus de 20 ans de métier. Appelez le 06 22 83 17 30.">
   <meta property="og:locale" content="fr_FR">
   <script type="application/ld+json">
   {
@@ -34,306 +34,493 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root{ --primary:#1d6fb8; --primary-dark:#155488; --primary-soft:#eaf3fa; --ink:#16202b; --muted:#5a6b7b; }
+    :root{
+      --primary:#1d6fb8; --primary-dark:#155488; --primary-deep:#10314f; --primary-soft:#e8f1f9;
+      --paper:#f7f3ec; --paper-2:#efe7d9; --card:#fffdf9;
+      --ink:#221c16; --muted:#6c6053;
+      --accent:#b9822f; --accent-2:#9d6a1d; --accent-soft:#f1e4cd;
+      --line:rgba(34,28,22,.12);
+    }
+    *{box-sizing:border-box;}
     html{scroll-behavior:smooth;}
-    body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);}
-    h1,h2,h3,.display{font-family:'Poppins',system-ui,sans-serif;}
-    .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1);}
+    body{font-family:'Hanken Grotesk',system-ui,sans-serif;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;}
+    h1,h2,h3,.disp{font-family:'Fraunces',Georgia,serif;font-weight:600;letter-spacing:-.012em;}
+    ::selection{background:var(--accent-soft);}
+
+    /* Grain léger sur sections choisies */
+    .grain{position:relative;}
+    .grain::after{content:'';position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;opacity:.06;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+
+    /* Eyebrow */
+    .eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-2);}
+    .eyebrow::before{content:'';display:inline-block;width:1.6rem;height:1px;background:var(--accent);vertical-align:middle;margin-right:.55rem;}
+    .eyebrow.center{display:block;text-align:center;}
+    .eyebrow.center::after{content:'';display:inline-block;width:1.6rem;height:1px;background:var(--accent);vertical-align:middle;margin-left:.55rem;}
+
+    /* Boutons */
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;border-radius:999px;font-weight:700;padding:.95rem 1.55rem;font-size:1rem;line-height:1;transition:transform .2s,box-shadow .2s,background .2s,border-color .2s,color .2s;cursor:pointer;}
+    .btn-primary{background:var(--primary);color:#fff;box-shadow:0 12px 26px -12px rgba(16,49,79,.65);}
+    .btn-primary:hover{background:var(--primary-dark);transform:translateY(-2px);box-shadow:0 18px 32px -14px rgba(16,49,79,.7);}
+    .btn-ghost{border:1.5px solid var(--line);color:var(--ink);background:transparent;}
+    .btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px);}
+    .btn-light{background:#fff;color:var(--primary-deep);}
+    .btn-light:hover{transform:translateY(-2px);box-shadow:0 14px 28px -14px rgba(0,0,0,.4);}
+
+    .card{background:var(--card);border:1px solid var(--line);border-radius:20px;transition:transform .28s,box-shadow .28s,border-color .28s;}
+    .card-hover:hover{transform:translateY(-5px);box-shadow:0 26px 44px -26px rgba(34,28,22,.4);border-color:rgba(185,130,47,.45);}
+
+    .nav-link{position:relative;padding:.2rem 0;}
+    .nav-link::after{content:'';position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .25s;}
+    .nav-link:hover::after{transform:scaleX(1);}
+
+    /* Image hero : réchauffe le noir et blanc */
+    .hero-photo{position:relative;border-radius:22px;overflow:hidden;box-shadow:0 34px 64px -32px rgba(16,49,79,.55);}
+    .hero-photo img{display:block;width:100%;height:100%;object-fit:cover;filter:sepia(.24) contrast(1.05) brightness(1.03);}
+    .hero-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(150deg,rgba(16,49,79,.12),rgba(185,130,47,.22));mix-blend-mode:multiply;}
+
+    .stat-num{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2.7rem,7vw,4rem);line-height:.9;color:var(--primary-deep);}
+
+    .ba{position:relative;width:100%;aspect-ratio:3/2;border-radius:20px;overflow:hidden;user-select:none;touch-action:none;box-shadow:0 26px 50px -28px rgba(16,49,79,.5);}
+    .ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
+    .ba .before{clip-path:inset(0 calc(100% - var(--pos,50%)) 0 0);}
+    .ba-line{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:2px;background:#fff;transform:translateX(-1px);box-shadow:0 0 0 1px rgba(0,0,0,.08);}
+    .ba-handle{position:absolute;top:50%;left:var(--pos,50%);width:46px;height:46px;border-radius:999px;background:#fff;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;color:var(--primary-deep);box-shadow:0 6px 16px rgba(0,0,0,.3);}
+    .ba-range{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;}
+    .ba-tag{position:absolute;top:14px;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:rgba(16,49,79,.7);backdrop-filter:blur(4px);padding:.35rem .7rem;border-radius:999px;}
+    .ba-tag.l{left:14px;} .ba-tag.r{right:14px;background:rgba(185,130,47,.85);}
+
+    /* Reveal au défilement */
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.22,.61,.36,1),transform .8s cubic-bezier(.22,.61,.36,1);}
     .reveal.on{opacity:1;transform:none;}
-    .reveal-stagger>*{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}
+    .reveal-stagger>*{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease;}
     .reveal-stagger.on>*{opacity:1;transform:none;}
-    .reveal-stagger.on>*:nth-child(2){transition-delay:.08s;}
-    .reveal-stagger.on>*:nth-child(3){transition-delay:.16s;}
-    .reveal-stagger.on>*:nth-child(4){transition-delay:.24s;}
-    .reveal-stagger.on>*:nth-child(5){transition-delay:.32s;}
-    .reveal-stagger.on>*:nth-child(6){transition-delay:.40s;}
+    .reveal-stagger.on>*:nth-child(2){transition-delay:.07s;}
+    .reveal-stagger.on>*:nth-child(3){transition-delay:.14s;}
+    .reveal-stagger.on>*:nth-child(4){transition-delay:.21s;}
+    .reveal-stagger.on>*:nth-child(5){transition-delay:.28s;}
+    .reveal-stagger.on>*:nth-child(6){transition-delay:.35s;}
+    @media (prefers-reduced-motion:reduce){.reveal,.reveal-stagger>*{transition:none;opacity:1;transform:none;}}
   </style>
 </head>
-<body class="bg-white">
+<body>
 
-  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-100">
-    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-      <a href="#top" class="display tracking-tight leading-none">
-        <span class="block font-extrabold text-base sm:text-lg">Michel Bonnin</span>
-        <span class="block text-[10px] sm:text-[11px] font-bold text-[var(--primary)] uppercase tracking-[0.18em]">Plâtrerie Plomberie</span>
+  <!-- ================= EN-TÊTE ================= -->
+  <header class="sticky top-0 z-40 bg-[var(--paper)]/85 backdrop-blur border-b border-[var(--line)]">
+    <div class="max-w-6xl mx-auto px-5 h-[68px] flex items-center justify-between">
+      <a href="#top" class="leading-none">
+        <span class="block disp font-bold text-lg text-[var(--ink)]">Michel Bonnin</span>
+        <span class="block text-[10px] font-bold text-[var(--accent-2)] uppercase tracking-[0.22em] mt-0.5">Plâtrerie · Plomberie</span>
       </a>
-      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600">
-        <a href="#services" class="hover:text-[var(--primary)]">Services</a>
-        <a href="#zone" class="hover:text-[var(--primary)]">Zone</a>
-        <a href="#realisations" class="hover:text-[var(--primary)]">Réalisations</a>
-        <a href="#devis" class="hover:text-[var(--primary)]">Devis</a>
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-[var(--muted)]">
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#methode" class="nav-link">Méthode</a>
+        <a href="#zone" class="nav-link">Zone</a>
+        <a href="#realisations" class="nav-link">Réalisations</a>
+        <a href="#engagements" class="nav-link">Engagements</a>
       </nav>
       <div class="flex items-center gap-3">
-        <a href="tel:+33622831730" class="hidden sm:inline-flex items-center gap-2 text-sm font-bold text-[var(--primary)]">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <a href="tel:+33622831730" class="hidden sm:inline-flex items-center gap-2 text-sm font-bold text-[var(--primary-deep)]">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           06 22 83 17 30
         </a>
-        <a href="#devis" class="inline-flex items-center rounded-lg bg-[var(--primary)] hover:bg-[var(--primary-dark)] text-white text-sm font-bold px-4 py-2.5 transition">Devis gratuit</a>
+        <a href="#devis" class="btn btn-primary !py-2.5 !px-4 text-sm">Devis gratuit</a>
       </div>
     </div>
   </header>
 
-  <section id="top" class="relative overflow-hidden bg-[var(--primary-soft)]">
-    <div class="max-w-6xl mx-auto px-4 py-14 md:py-20 grid md:grid-cols-2 gap-10 items-center">
+  <!-- ================= HERO ================= -->
+  <section id="top" class="grain relative overflow-hidden">
+    <div class="absolute -top-24 -right-24 w-[28rem] h-[28rem] rounded-full bg-[var(--accent-soft)] blur-3xl opacity-50 pointer-events-none"></div>
+    <div class="max-w-6xl mx-auto px-5 pt-14 pb-16 md:pt-20 md:pb-24 grid grid-cols-1 md:grid-cols-[1.05fr_.95fr] gap-12 md:gap-10 items-center relative">
       <div class="reveal on">
-        <p class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[var(--primary)] mb-4"><span class="w-6 h-px bg-[var(--primary)]"></span> Plaquiste & Plombier · Labastide Saint Pierre</p>
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-4">Plaquiste et plombier à Labastide Saint Pierre</h1>
-        <p class="text-lg text-slate-600 mb-7 max-w-md">Pose de placo, rénovation de salle de bain, plomberie : un travail soigné et un devis gratuit, dans tout le nord du Tarn et Garonne.</p>
-        <div class="flex flex-wrap gap-3 mb-7">
-          <a href="tel:+33622831730" class="inline-flex items-center gap-2 rounded-xl bg-[var(--primary)] hover:bg-[var(--primary-dark)] text-white font-bold px-6 py-3.5 text-base shadow-lg shadow-black/5 transition">
+        <p class="eyebrow mb-5"><span>Plaquiste &amp; plombier · Labastide Saint Pierre</span></p>
+        <h1 class="text-[2.05rem] sm:text-5xl md:text-[3.4rem] leading-[1.08] mb-5">
+          Plaquiste &amp; plombier à Labastide Saint Pierre,
+          <span class="block italic font-normal text-[var(--accent-2)] mt-2">le travail soigné, sans mauvaise surprise.</span>
+        </h1>
+        <p class="text-lg text-[var(--muted)] leading-relaxed mb-8 max-w-xl">Pose de placo, rénovation de salle de bain, dépannage plomberie. Plus de 20 ans de métier au service des particuliers du nord toulousain. Devis gratuit, chantier propre, travail garanti.</p>
+        <div class="flex flex-wrap gap-3 mb-8">
+          <a href="tel:+33622831730" class="btn btn-primary text-base">
             <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             Appeler le 06 22 83 17 30
           </a>
-          <a href="#devis" class="inline-flex items-center rounded-xl border-2 border-slate-200 hover:border-[var(--primary)] font-bold px-6 py-3.5 text-base transition">Demander un devis</a>
+          <a href="#devis" class="btn btn-ghost text-base">Demander un devis gratuit</a>
         </div>
-        <ul class="flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold text-slate-600">
-          <li class="inline-flex items-center gap-1.5"><span class="text-[var(--primary)]">✓</span> Devis gratuit</li>
-          <li class="inline-flex items-center gap-1.5"><span class="text-[var(--primary)]">✓</span> Plus de 20 ans d'expérience</li>
-          <li class="inline-flex items-center gap-1.5"><span class="text-[var(--primary)]">✓</span> Travail soigné</li>
-          <li class="inline-flex items-center gap-1.5"><span class="text-[var(--primary)]">✓</span> Intervention rapide</li>
+        <ul class="flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold text-[var(--muted)]">
+          <li class="inline-flex items-center gap-1.5"><span class="text-[var(--accent)]">●</span> Devis gratuit</li>
+          <li class="inline-flex items-center gap-1.5"><span class="text-[var(--accent)]">●</span> Plus de 20 ans d'expérience</li>
+          <li class="inline-flex items-center gap-1.5"><span class="text-[var(--accent)]">●</span> Assurance décennale</li>
+          <li class="inline-flex items-center gap-1.5"><span class="text-[var(--accent)]">●</span> Intervention rapide</li>
         </ul>
       </div>
-      <div class="reveal on">
-        <img src="assets/hero.jpg" alt="Plaquiste et plombier à Labastide Saint Pierre" class="rounded-2xl w-full h-72 md:h-96 object-cover shadow-xl">
-      </div>
-    </div>
-  </section>
-
-  <section class="border-y border-slate-100">
-    <div class="max-w-6xl mx-auto px-4 py-6 grid grid-cols-2 md:grid-cols-4 gap-6 reveal-stagger">
-      <div class="flex items-center gap-3"><span class="text-[var(--primary)]">✓</span><span class="text-sm font-semibold">Devis gratuit sous 24h</span></div>
-      <div class="flex items-center gap-3"><span class="text-[var(--primary)]">✓</span><span class="text-sm font-semibold">Labastide, Campsas, Montauban</span></div>
-      <div class="flex items-center gap-3"><span class="text-[var(--primary)]">✓</span><span class="text-sm font-semibold">Travail garanti</span></div>
-      <div class="flex items-center gap-3"><span class="text-[var(--primary)]">✓</span><span class="text-sm font-semibold">Réponse rapide</span></div>
-    </div>
-  </section>
-
-  <section id="services" class="max-w-6xl mx-auto px-4 py-16 md:py-20">
-    <div class="text-center max-w-2xl mx-auto mb-12 reveal">
-      <p class="text-xs font-bold uppercase tracking-widest text-[var(--primary)] mb-3">Nos prestations</p>
-      <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold">Ce que nous faisons pour vous</h2>
-    </div>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 reveal-stagger">
-      <div class="rounded-2xl border border-slate-100 overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition bg-white">
-        <img src="assets/serv-placo.jpg" alt="Pose de placo et cloisons" class="w-full h-44 object-cover">
-        <div class="p-6">
-          <h3 class="font-bold text-lg mb-1.5">Pose de placo et cloisons</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">Cloisons, doublage, faux plafonds et isolation, posés proprement et dans les règles.</p>
+      <div class="reveal on relative">
+        <div class="hero-photo h-80 md:h-[30rem]">
+          <img src="assets/hero.jpg" alt="Michel Bonnin, plaquiste et plombier au travail à Labastide Saint Pierre">
         </div>
-      </div>
-      <div class="rounded-2xl border border-slate-100 overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition bg-white">
-        <img src="assets/serv-sdb.jpg" alt="Rénovation de salle de bain" class="w-full h-44 object-cover">
-        <div class="p-6">
-          <h3 class="font-bold text-lg mb-1.5">Rénovation de salle de bain</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">De la dépose à la pose, douche, carrelage et plomberie, votre salle de bain clé en main.</p>
-        </div>
-      </div>
-      <div class="rounded-2xl border border-slate-100 overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition bg-white">
-        <img src="assets/serv-plomberie.jpg" alt="Plomberie et dépannage" class="w-full h-44 object-cover">
-        <div class="p-6">
-          <h3 class="font-bold text-lg mb-1.5">Plomberie et dépannage</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">Fuites, robinetterie, chauffe eau, raccordements : on intervient vite et bien.</p>
-        </div>
-      </div>
-      <div class="rounded-2xl border border-slate-100 overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition bg-white">
-        <img src="assets/serv-isolation.jpg" alt="Isolation intérieure" class="w-full h-44 object-cover">
-        <div class="p-6">
-          <h3 class="font-bold text-lg mb-1.5">Isolation intérieure</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">Murs et combles, pour plus de confort chez vous et des factures allégées.</p>
-        </div>
-      </div>
-      <div class="rounded-2xl border border-slate-100 overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition bg-white">
-        <img src="assets/serv-peinture.jpg" alt="Peinture et finitions" class="w-full h-44 object-cover">
-        <div class="p-6">
-          <h3 class="font-bold text-lg mb-1.5">Peinture et finitions</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">Préparation, enduits et peinture pour une finition nette, sans bavure.</p>
-        </div>
-      </div>
-      <div class="rounded-2xl border border-slate-100 overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition bg-white">
-        <img src="assets/serv-travaux.jpg" alt="Petits travaux" class="w-full h-44 object-cover">
-        <div class="p-6">
-          <h3 class="font-bold text-lg mb-1.5">Petits travaux</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">Aménagement, réparations, coups de main : on s'occupe aussi des détails.</p>
+        <div class="absolute -bottom-6 -left-4 sm:left-auto sm:-right-6 bg-[var(--card)] border border-[var(--line)] rounded-2xl shadow-xl px-5 py-4 flex items-center gap-4">
+          <div class="text-center">
+            <div class="disp text-3xl font-bold text-[var(--primary-deep)] leading-none">20<span class="text-[var(--accent)]">+</span></div>
+            <div class="text-[11px] font-semibold uppercase tracking-wider text-[var(--muted)] mt-1">ans de métier</div>
+          </div>
+          <div class="w-px h-10 bg-[var(--line)]"></div>
+          <div class="text-sm font-bold text-[var(--ink)] leading-snug">Assurance<br>décennale</div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="zone" class="bg-[var(--primary-soft)]">
-    <div class="max-w-6xl mx-auto px-4 py-16 md:py-20 grid md:grid-cols-2 gap-10 items-center">
+  <!-- ================= BANDEAU URGENCE (plomberie) ================= -->
+  <section class="bg-[var(--primary-deep)] text-white">
+    <div class="max-w-6xl mx-auto px-5 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+      <p class="font-semibold text-[15px] flex items-center gap-3">
+        <span class="flex-none w-9 h-9 rounded-full bg-[var(--accent)] flex items-center justify-center">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </span>
+        Une fuite, un chauffe-eau en panne ? Intervention rapide en plomberie, on vous dépanne vite.
+      </p>
+      <a href="tel:+33622831730" class="btn btn-light text-sm whitespace-nowrap">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Appeler maintenant
+      </a>
+    </div>
+  </section>
+
+  <!-- ================= CHIFFRES CLÉS ================= -->
+  <section class="max-w-6xl mx-auto px-5 py-14 md:py-16">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 reveal-stagger">
+      <div class="text-center sm:text-left">
+        <div class="stat-num"><span class="cnt" data-count="20" data-suffix="+">0</span></div>
+        <div class="mt-2 text-sm font-semibold text-[var(--muted)]">ans de métier, sur le terrain</div>
+      </div>
+      <div class="text-center sm:text-left">
+        <div class="stat-num"><span class="cnt" data-count="24" data-suffix="h">0</span></div>
+        <div class="mt-2 text-sm font-semibold text-[var(--muted)]">pour vous répondre</div>
+      </div>
+      <div class="text-center sm:text-left">
+        <div class="stat-num"><span class="cnt" data-count="100" data-suffix="%">0</span></div>
+        <div class="mt-2 text-sm font-semibold text-[var(--muted)]">devis gratuits et clairs</div>
+      </div>
+      <div class="text-center sm:text-left">
+        <div class="stat-num"><span class="cnt" data-count="0" data-suffix="">0</span></div>
+        <div class="mt-2 text-sm font-semibold text-[var(--muted)]">mauvaise surprise sur la facture</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SERVICES ================= -->
+  <section id="services" class="bg-[var(--paper-2)] grain">
+    <div class="max-w-6xl mx-auto px-5 py-20 md:py-28">
+      <div class="max-w-2xl mb-14 reveal">
+        <p class="eyebrow mb-4">Nos prestations</p>
+        <h2 class="text-3xl md:text-4xl mb-3">Tout pour rénover et entretenir votre intérieur</h2>
+        <p class="text-[var(--muted)] text-lg">Du gros oeuvre intérieur à la finition, un seul artisan de confiance, du devis jusqu'au dernier coup de balai.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal-stagger">
+        <article class="card card-hover overflow-hidden">
+          <div class="overflow-hidden h-48"><img src="assets/serv-placo.jpg" alt="Pose de placo et cloisons" class="w-full h-full object-cover hover:scale-105 transition duration-500"></div>
+          <div class="p-6"><h3 class="text-xl mb-2">Pose de placo et cloisons</h3><p class="text-sm text-[var(--muted)] leading-relaxed">Cloisons, doublage, faux plafonds et isolation, posés proprement et dans les règles.</p></div>
+        </article>
+        <article class="card card-hover overflow-hidden">
+          <div class="overflow-hidden h-48"><img src="assets/serv-sdb.jpg" alt="Rénovation de salle de bain" class="w-full h-full object-cover hover:scale-105 transition duration-500"></div>
+          <div class="p-6"><h3 class="text-xl mb-2">Rénovation de salle de bain</h3><p class="text-sm text-[var(--muted)] leading-relaxed">De la dépose à la pose, douche, carrelage et plomberie, votre salle de bain clé en main.</p></div>
+        </article>
+        <article class="card card-hover overflow-hidden">
+          <div class="overflow-hidden h-48"><img src="assets/serv-plomberie.jpg" alt="Plomberie et dépannage" class="w-full h-full object-cover hover:scale-105 transition duration-500"></div>
+          <div class="p-6"><h3 class="text-xl mb-2">Plomberie et dépannage</h3><p class="text-sm text-[var(--muted)] leading-relaxed">Fuites, robinetterie, chauffe-eau, raccordements : on intervient vite et bien.</p></div>
+        </article>
+        <article class="card card-hover overflow-hidden">
+          <div class="overflow-hidden h-48"><img src="assets/serv-isolation.jpg" alt="Isolation intérieure" class="w-full h-full object-cover hover:scale-105 transition duration-500"></div>
+          <div class="p-6"><h3 class="text-xl mb-2">Isolation intérieure</h3><p class="text-sm text-[var(--muted)] leading-relaxed">Murs et combles, pour plus de confort chez vous et des factures allégées.</p></div>
+        </article>
+        <article class="card card-hover overflow-hidden">
+          <div class="overflow-hidden h-48"><img src="assets/serv-peinture.jpg" alt="Peinture et finitions" class="w-full h-full object-cover hover:scale-105 transition duration-500"></div>
+          <div class="p-6"><h3 class="text-xl mb-2">Peinture et finitions</h3><p class="text-sm text-[var(--muted)] leading-relaxed">Préparation, enduits et peinture pour une finition nette, sans bavure.</p></div>
+        </article>
+        <article class="card card-hover overflow-hidden">
+          <div class="overflow-hidden h-48"><img src="assets/serv-travaux.jpg" alt="Petits travaux" class="w-full h-full object-cover hover:scale-105 transition duration-500"></div>
+          <div class="p-6"><h3 class="text-xl mb-2">Petits travaux</h3><p class="text-sm text-[var(--muted)] leading-relaxed">Aménagement, réparations, coups de main : on s'occupe aussi des détails.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= COMMENT ÇA SE PASSE ================= -->
+  <section id="methode" class="max-w-6xl mx-auto px-5 py-20 md:py-28">
+    <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+      <p class="eyebrow center justify-center mb-4">Comment ça se passe</p>
+      <h2 class="text-3xl md:text-4xl">Simple, du premier appel à la dernière finition</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8 reveal-stagger">
+      <div class="relative">
+        <span class="disp text-5xl font-bold text-[var(--accent-soft)] absolute -top-4 right-2 select-none">01</span>
+        <div class="relative">
+          <div class="w-12 h-12 rounded-2xl bg-[var(--primary-soft)] text-[var(--primary)] flex items-center justify-center mb-4">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <h3 class="text-xl mb-2">On échange</h3>
+          <p class="text-[var(--muted)] leading-relaxed">Un appel ou un message, vous m'expliquez votre projet. Je vous réponds dans la journée.</p>
+        </div>
+      </div>
+      <div class="relative">
+        <span class="disp text-5xl font-bold text-[var(--accent-soft)] absolute -top-4 right-2 select-none">02</span>
+        <div class="relative">
+          <div class="w-12 h-12 rounded-2xl bg-[var(--primary-soft)] text-[var(--primary)] flex items-center justify-center mb-4">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg>
+          </div>
+          <h3 class="text-xl mb-2">Devis gratuit et clair</h3>
+          <p class="text-[var(--muted)] leading-relaxed">Je passe voir le chantier, puis je vous remets un devis détaillé. Le prix annoncé est le prix payé.</p>
+        </div>
+      </div>
+      <div class="relative">
+        <span class="disp text-5xl font-bold text-[var(--accent-soft)] absolute -top-4 right-2 select-none">03</span>
+        <div class="relative">
+          <div class="w-12 h-12 rounded-2xl bg-[var(--primary-soft)] text-[var(--primary)] flex items-center justify-center mb-4">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          </div>
+          <h3 class="text-xl mb-2">Le chantier, bien fait</h3>
+          <p class="text-[var(--muted)] leading-relaxed">J'interviens proprement, dans les délais convenus, et je ne repars qu'une fois tout nettoyé.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ZONE D'INTERVENTION ================= -->
+  <section id="zone" class="bg-[var(--paper-2)] grain">
+    <div class="max-w-6xl mx-auto px-5 py-20 md:py-28 grid md:grid-cols-2 gap-12 items-center">
       <div class="reveal">
-        <p class="text-xs font-bold uppercase tracking-widest text-[var(--primary)] mb-3">Zone d'intervention</p>
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-4">Labastide Saint Pierre et tout le secteur</h2>
-        <p class="text-slate-600 mb-6">Nous intervenons à Labastide Saint Pierre, Campsas, Montauban et le nord toulousain. Un doute sur votre commune ? Appelez nous, on vous répond tout de suite.</p>
+        <p class="eyebrow mb-4">Zone d'intervention</p>
+        <h2 class="text-3xl md:text-4xl mb-4">Labastide Saint Pierre et tout le secteur</h2>
+        <p class="text-[var(--muted)] text-lg mb-7">Nous intervenons à Labastide Saint Pierre, Campsas, Montauban et le nord toulousain. Un doute sur votre commune ? Appelez nous, on vous répond tout de suite.</p>
         <div class="flex flex-wrap gap-2">
-          <span class="inline-flex items-center rounded-full bg-white border border-slate-200 px-3 py-1.5 text-sm font-semibold">Labastide Saint Pierre</span>
-          <span class="inline-flex items-center rounded-full bg-white border border-slate-200 px-3 py-1.5 text-sm font-semibold">Campsas</span>
-          <span class="inline-flex items-center rounded-full bg-white border border-slate-200 px-3 py-1.5 text-sm font-semibold">Montauban</span>
-          <span class="inline-flex items-center rounded-full bg-white border border-slate-200 px-3 py-1.5 text-sm font-semibold">Grisolles</span>
-          <span class="inline-flex items-center rounded-full bg-white border border-slate-200 px-3 py-1.5 text-sm font-semibold">Dieupentale</span>
-          <span class="inline-flex items-center rounded-full bg-white border border-slate-200 px-3 py-1.5 text-sm font-semibold">Orgueil</span>
-          <span class="inline-flex items-center rounded-full bg-white border border-slate-200 px-3 py-1.5 text-sm font-semibold">Nohic</span>
-          <span class="inline-flex items-center rounded-full bg-white border border-slate-200 px-3 py-1.5 text-sm font-semibold">Villebrumier</span>
-          <span class="inline-flex items-center rounded-full bg-white border border-slate-200 px-3 py-1.5 text-sm font-semibold">Canals</span>
+          <span class="inline-flex items-center rounded-full bg-[var(--card)] border border-[var(--line)] px-3.5 py-1.5 text-sm font-semibold">Labastide Saint Pierre</span>
+          <span class="inline-flex items-center rounded-full bg-[var(--card)] border border-[var(--line)] px-3.5 py-1.5 text-sm font-semibold">Campsas</span>
+          <span class="inline-flex items-center rounded-full bg-[var(--card)] border border-[var(--line)] px-3.5 py-1.5 text-sm font-semibold">Montauban</span>
+          <span class="inline-flex items-center rounded-full bg-[var(--card)] border border-[var(--line)] px-3.5 py-1.5 text-sm font-semibold">Grisolles</span>
+          <span class="inline-flex items-center rounded-full bg-[var(--card)] border border-[var(--line)] px-3.5 py-1.5 text-sm font-semibold">Dieupentale</span>
+          <span class="inline-flex items-center rounded-full bg-[var(--card)] border border-[var(--line)] px-3.5 py-1.5 text-sm font-semibold">Orgueil</span>
+          <span class="inline-flex items-center rounded-full bg-[var(--card)] border border-[var(--line)] px-3.5 py-1.5 text-sm font-semibold">Nohic</span>
+          <span class="inline-flex items-center rounded-full bg-[var(--card)] border border-[var(--line)] px-3.5 py-1.5 text-sm font-semibold">Villebrumier</span>
+          <span class="inline-flex items-center rounded-full bg-[var(--card)] border border-[var(--line)] px-3.5 py-1.5 text-sm font-semibold">Canals</span>
         </div>
       </div>
       <div class="reveal">
-        <iframe src="https://www.google.com/maps?q=Labastide-Saint-Pierre&output=embed" class="w-full h-72 rounded-2xl border-0 shadow-lg" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Carte de la zone"></iframe>
+        <iframe src="https://www.google.com/maps?q=Labastide-Saint-Pierre&output=embed" class="w-full h-80 rounded-2xl border-0 shadow-lg" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Carte de la zone d'intervention"></iframe>
       </div>
     </div>
   </section>
 
-  <section id="realisations" class="max-w-6xl mx-auto px-4 py-16 md:py-20">
-    <div class="text-center max-w-2xl mx-auto mb-3 reveal">
-      <p class="text-xs font-bold uppercase tracking-widest text-[var(--primary)] mb-3">Nos réalisations</p>
-      <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold">Des chantiers qui parlent pour nous</h2>
+  <!-- ================= RÉALISATIONS ================= -->
+  <section id="realisations" class="max-w-6xl mx-auto px-5 py-20 md:py-28">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-3 reveal">
+      <div class="max-w-2xl">
+        <p class="eyebrow mb-4">Nos réalisations</p>
+        <h2 class="text-3xl md:text-4xl">Des chantiers qui parlent pour nous</h2>
+      </div>
     </div>
-    <p class="text-center text-sm text-slate-400 mb-10 reveal">Photos d'illustration, à remplacer par vos propres chantiers.</p>
+    <p class="text-sm text-[var(--muted)] italic mb-10 reveal">Photos d'illustration. Vos propres chantiers prendront leur place ici dès la mise en ligne.</p>
+
+    <!-- Avant / après -->
+    <div class="mb-10 reveal">
+      <div class="ba" id="ba" style="--pos:50%">
+        <img src="assets/ba-apres.jpg" alt="Salle de bain après rénovation">
+        <img src="assets/ba-avant.jpg" alt="Pièce avant rénovation" class="before">
+        <span class="ba-tag l">Avant</span>
+        <span class="ba-tag r">Après</span>
+        <div class="ba-line"></div>
+        <div class="ba-handle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/><path d="m9 6 6 6-6 6" opacity="0"/><path d="M8 12h8"/><path d="m6 9-3 3 3 3"/><path d="m18 9 3 3-3 3"/></svg></div>
+        <input type="range" min="0" max="100" value="50" class="ba-range" id="baRange" aria-label="Comparer avant et après rénovation">
+      </div>
+      <p class="text-center text-sm text-[var(--muted)] mt-3">Glissez pour comparer avant et après une rénovation.</p>
+    </div>
+
     <div class="grid grid-cols-2 md:grid-cols-3 gap-4 reveal-stagger">
-      <img src="assets/real-sdb.jpg" alt="Salle de bain rénovée" class="rounded-xl w-full h-52 object-cover">
-      <img src="assets/real-placo.jpg" alt="Pose de placo et faux plafond" class="rounded-xl w-full h-52 object-cover">
-      <img src="assets/real-douche.jpg" alt="Douche à l'italienne carrelée" class="rounded-xl w-full h-52 object-cover">
-      <img src="assets/real-cuisine.jpg" alt="Cuisine rénovée" class="rounded-xl w-full h-52 object-cover">
-      <img src="assets/real-salon.jpg" alt="Salon rénové" class="rounded-xl w-full h-52 object-cover">
-      <img src="assets/real-chambre.jpg" alt="Chambre rénovée" class="rounded-xl w-full h-52 object-cover">
+      <div class="overflow-hidden rounded-2xl h-56"><img src="assets/real-sdb.jpg" alt="Salle de bain rénovée" class="w-full h-full object-cover hover:scale-105 transition duration-500"></div>
+      <div class="overflow-hidden rounded-2xl h-56"><img src="assets/real-placo.jpg" alt="Pose de placo et faux plafond" class="w-full h-full object-cover hover:scale-105 transition duration-500"></div>
+      <div class="overflow-hidden rounded-2xl h-56"><img src="assets/real-douche.jpg" alt="Douche à l'italienne carrelée" class="w-full h-full object-cover hover:scale-105 transition duration-500"></div>
+      <div class="overflow-hidden rounded-2xl h-56"><img src="assets/real-cuisine.jpg" alt="Cuisine rénovée" class="w-full h-full object-cover hover:scale-105 transition duration-500"></div>
+      <div class="overflow-hidden rounded-2xl h-56"><img src="assets/real-salon.jpg" alt="Salon rénové" class="w-full h-full object-cover hover:scale-105 transition duration-500"></div>
+      <div class="overflow-hidden rounded-2xl h-56"><img src="assets/real-chambre.jpg" alt="Chambre rénovée" class="w-full h-full object-cover hover:scale-105 transition duration-500"></div>
     </div>
   </section>
 
-  <section id="apropos" class="bg-[var(--primary-soft)]">
-    <div class="max-w-3xl mx-auto px-4 py-16 md:py-20 text-center">
-      <p class="text-xs font-bold uppercase tracking-widest text-[var(--primary)] mb-3 reveal">Votre artisan</p>
-      <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-4 reveal">Michel Bonnin</h2>
-      <p class="text-slate-600 text-lg reveal">Plaquiste et plombier depuis plus de 20 ans, installé à Labastide Saint Pierre. Je m'occupe de votre chantier du devis à la finition, en direct avec vous. Mon métier, c'est un travail soigné, des délais tenus, et des clients tranquilles.</p>
+  <!-- ================= VOTRE ARTISAN (bande sombre) ================= -->
+  <section id="apropos" class="bg-[var(--primary-deep)] text-white grain relative overflow-hidden">
+    <div class="absolute -bottom-32 -left-20 w-[26rem] h-[26rem] rounded-full bg-[var(--accent)] blur-3xl opacity-20 pointer-events-none"></div>
+    <div class="max-w-4xl mx-auto px-5 py-20 md:py-28 text-center relative">
+      <p class="eyebrow center justify-center mb-6" style="color:var(--accent-soft)">Votre artisan</p>
+      <span class="disp text-6xl text-[var(--accent)] leading-none block mb-2">&ldquo;</span>
+      <blockquote class="disp text-2xl md:text-[2rem] leading-snug font-medium max-w-3xl mx-auto">
+        Mon métier, c'est un travail soigné, des délais tenus, et des clients tranquilles. Je m'occupe de votre chantier du devis à la finition, en direct avec vous.
+      </blockquote>
+      <p class="mt-8 font-bold text-lg">Michel Bonnin</p>
+      <p class="text-white/70 text-sm">Plaquiste et plombier à Labastide Saint Pierre, depuis plus de 20 ans</p>
     </div>
   </section>
 
-  <section id="avis" class="bg-slate-50">
-    <div class="max-w-4xl mx-auto px-4 py-16 md:py-20 text-center">
-      <p class="text-xs font-bold uppercase tracking-widest text-[var(--primary)] mb-3 reveal">Vos avis clients</p>
-      <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold reveal">La confiance de vos clients, bien visible</h2>
-      <div class="mt-8 rounded-2xl bg-white border border-dashed border-slate-300 p-8 max-w-2xl mx-auto reveal">
-        <div class="text-amber-400 text-2xl mb-3">★★★★★</div>
-        <p class="text-slate-600 leading-relaxed">Ici s'afficheront les avis de vos clients, reliés à votre fiche Google. On les met en place ensemble dès la mise en ligne, et on vous aide à en récolter après chaque chantier.</p>
+  <!-- ================= AVIS (placeholder honnête, relié à la fiche Google) ================= -->
+  <section id="avis" class="max-w-4xl mx-auto px-5 py-20 md:py-28 text-center">
+    <p class="eyebrow center justify-center mb-4">Vos avis clients</p>
+    <h2 class="text-3xl md:text-4xl reveal">La confiance de vos clients, bien visible</h2>
+    <div class="mt-10 card border-dashed p-8 md:p-10 max-w-2xl mx-auto reveal">
+      <div class="flex items-center justify-center gap-2 mb-4">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z"/><path fill="#34A853" d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3a7.2 7.2 0 0 1-11-3.8H1v3.1A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5 14.3a7.1 7.1 0 0 1 0-4.6V6.6H1a12 12 0 0 0 0 10.8z"/><path fill="#EA4335" d="M12 4.8c1.8 0 3.3.6 4.6 1.8l3.4-3.4A12 12 0 0 0 1 6.6l4 3.1A7.2 7.2 0 0 1 12 4.8z"/></svg>
+        <span class="text-amber-500 text-xl tracking-widest">★★★★★</span>
       </div>
+      <p class="text-[var(--muted)] leading-relaxed">Vos premiers avis Google s'afficheront ici. On les met en place ensemble dès la mise en ligne, et on vous aide à en récolter après chaque chantier réussi.</p>
     </div>
   </section>
 
-  <section id="engagements" class="max-w-6xl mx-auto px-4 py-16 md:py-20">
-    <div class="text-center max-w-2xl mx-auto mb-12 reveal">
-      <p class="text-xs font-bold uppercase tracking-widest text-[var(--primary)] mb-3">Mes engagements</p>
-      <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold">Avec moi, pas de mauvaises surprises</h2>
-      <p class="text-slate-600 mt-3">Vous connaissez les mauvaises expériences avec certains artisans. Voici ce sur quoi je m'engage.</p>
-    </div>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 reveal-stagger">
-      <div class="rounded-2xl border border-slate-100 p-6 flex gap-4">
-        <span class="flex-none w-9 h-9 rounded-full bg-[var(--primary-soft)] text-[var(--primary)] flex items-center justify-center font-bold">✓</span>
-        <div><h3 class="font-bold mb-1">Je vous réponds dans la journée</h3><p class="text-sm text-slate-600">Un appel, un message : pas de demande qui reste sans réponse.</p></div>
+  <!-- ================= MES ENGAGEMENTS ================= -->
+  <section id="engagements" class="bg-[var(--paper-2)] grain">
+    <div class="max-w-6xl mx-auto px-5 py-20 md:py-28">
+      <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+        <p class="eyebrow center justify-center mb-4">Mes engagements</p>
+        <h2 class="text-3xl md:text-4xl mb-3">Avec moi, pas de mauvaises surprises</h2>
+        <p class="text-[var(--muted)] text-lg">Vous connaissez les mauvaises expériences avec certains artisans. Voici ce sur quoi je m'engage.</p>
       </div>
-      <div class="rounded-2xl border border-slate-100 p-6 flex gap-4">
-        <span class="flex-none w-9 h-9 rounded-full bg-[var(--primary-soft)] text-[var(--primary)] flex items-center justify-center font-bold">✓</span>
-        <div><h3 class="font-bold mb-1">Je viens à l'heure convenue</h3><p class="text-sm text-slate-600">Un rendez vous fixé est un rendez vous tenu. Le moindre imprévu, je préviens.</p></div>
-      </div>
-      <div class="rounded-2xl border border-slate-100 p-6 flex gap-4">
-        <span class="flex-none w-9 h-9 rounded-full bg-[var(--primary-soft)] text-[var(--primary)] flex items-center justify-center font-bold">✓</span>
-        <div><h3 class="font-bold mb-1">Un devis clair et gratuit</h3><p class="text-sm text-slate-600">Le montant annoncé est celui que vous payez, aucune surprise en cours de route.</p></div>
-      </div>
-      <div class="rounded-2xl border border-slate-100 p-6 flex gap-4">
-        <span class="flex-none w-9 h-9 rounded-full bg-[var(--primary-soft)] text-[var(--primary)] flex items-center justify-center font-bold">✓</span>
-        <div><h3 class="font-bold mb-1">Des délais annoncés et tenus</h3><p class="text-sm text-slate-600">Une date de fin réaliste, et je m'y tiens. Pas de chantier qui traîne.</p></div>
-      </div>
-      <div class="rounded-2xl border border-slate-100 p-6 flex gap-4">
-        <span class="flex-none w-9 h-9 rounded-full bg-[var(--primary-soft)] text-[var(--primary)] flex items-center justify-center font-bold">✓</span>
-        <div><h3 class="font-bold mb-1">Un chantier propre</h3><p class="text-sm text-slate-600">Je protège vos sols et vos meubles, et je repars en ayant tout nettoyé.</p></div>
-      </div>
-      <div class="rounded-2xl border border-slate-100 p-6 flex gap-4">
-        <span class="flex-none w-9 h-9 rounded-full bg-[var(--primary-soft)] text-[var(--primary)] flex items-center justify-center font-bold">✓</span>
-        <div><h3 class="font-bold mb-1">Un travail soigné et garanti</h3><p class="text-sm text-slate-600">Finitions soignées, assurance décennale. Un souci après coup ? Je reviens.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="devis" class="bg-[var(--primary-soft)]">
-    <div class="max-w-6xl mx-auto px-4 py-16 md:py-20 grid md:grid-cols-2 gap-10">
-      <div class="reveal">
-        <p class="text-xs font-bold uppercase tracking-widest text-[var(--primary)] mb-3">Devis gratuit</p>
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-4">Parlons de votre projet</h2>
-        <p class="text-slate-600 mb-8">Le plus rapide, c'est de nous appeler. Sinon, laissez vos coordonnées et on vous rappelle.</p>
-        <div class="space-y-4">
-          <a href="tel:+33622831730" class="flex items-center gap-3 font-bold text-lg"><span class="w-10 h-10 rounded-xl bg-[var(--primary)] text-white flex items-center justify-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>06 22 83 17 30</a>
-          <p class="flex items-center gap-3 text-slate-700"><span class="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center">✉️</span>bonninmichel31@gmail.com</p>
-          <p class="flex items-center gap-3 text-slate-700"><span class="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center">🕗</span>Du lundi au vendredi, 8h à 18h. Samedi sur rendez vous.</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal-stagger">
+        <div class="card p-6 flex gap-4">
+          <span class="flex-none w-10 h-10 rounded-full bg-[var(--accent-soft)] text-[var(--accent-2)] flex items-center justify-center font-bold">✓</span>
+          <div><h3 class="text-lg mb-1">Je vous réponds dans la journée</h3><p class="text-sm text-[var(--muted)]">Un appel, un message : pas de demande qui reste sans réponse.</p></div>
+        </div>
+        <div class="card p-6 flex gap-4">
+          <span class="flex-none w-10 h-10 rounded-full bg-[var(--accent-soft)] text-[var(--accent-2)] flex items-center justify-center font-bold">✓</span>
+          <div><h3 class="text-lg mb-1">Je viens à l'heure convenue</h3><p class="text-sm text-[var(--muted)]">Un rendez-vous fixé est un rendez-vous tenu. Le moindre imprévu, je préviens.</p></div>
+        </div>
+        <div class="card p-6 flex gap-4">
+          <span class="flex-none w-10 h-10 rounded-full bg-[var(--accent-soft)] text-[var(--accent-2)] flex items-center justify-center font-bold">✓</span>
+          <div><h3 class="text-lg mb-1">Un devis clair et gratuit</h3><p class="text-sm text-[var(--muted)]">Le montant annoncé est celui que vous payez, aucune surprise en cours de route.</p></div>
+        </div>
+        <div class="card p-6 flex gap-4">
+          <span class="flex-none w-10 h-10 rounded-full bg-[var(--accent-soft)] text-[var(--accent-2)] flex items-center justify-center font-bold">✓</span>
+          <div><h3 class="text-lg mb-1">Des délais annoncés et tenus</h3><p class="text-sm text-[var(--muted)]">Une date de fin réaliste, et je m'y tiens. Pas de chantier qui traîne.</p></div>
+        </div>
+        <div class="card p-6 flex gap-4">
+          <span class="flex-none w-10 h-10 rounded-full bg-[var(--accent-soft)] text-[var(--accent-2)] flex items-center justify-center font-bold">✓</span>
+          <div><h3 class="text-lg mb-1">Un chantier propre</h3><p class="text-sm text-[var(--muted)]">Je protège vos sols et vos meubles, et je repars en ayant tout nettoyé.</p></div>
+        </div>
+        <div class="card p-6 flex gap-4">
+          <span class="flex-none w-10 h-10 rounded-full bg-[var(--accent-soft)] text-[var(--accent-2)] flex items-center justify-center font-bold">✓</span>
+          <div><h3 class="text-lg mb-1">Un travail soigné et garanti</h3><p class="text-sm text-[var(--muted)]">Finitions soignées, assurance décennale. Un souci après coup ? Je reviens.</p></div>
         </div>
       </div>
-      <div class="reveal">
-        <form id="devisForm" class="bg-white rounded-2xl border border-slate-100 p-6 md:p-8 shadow-sm space-y-4">
-          <input type="hidden" name="access_key" value="CLE_WEB3FORMS_A_CREER">
-          <input type="hidden" name="subject" value="Nouvelle demande de devis depuis le site Michel Bonnin Plâtrerie Plomberie">
-          <div>
-            <label class="block text-sm font-semibold mb-1.5">Votre nom</label>
-            <input name="name" required class="w-full rounded-lg border border-slate-200 px-4 py-2.5 focus:outline-none focus:border-[var(--primary)]">
-          </div>
-          <div>
-            <label class="block text-sm font-semibold mb-1.5">Téléphone</label>
-            <input name="phone" type="tel" required class="w-full rounded-lg border border-slate-200 px-4 py-2.5 focus:outline-none focus:border-[var(--primary)]">
-          </div>
-          <div>
-            <label class="block text-sm font-semibold mb-1.5">Email (facultatif)</label>
-            <input name="email" type="email" class="w-full rounded-lg border border-slate-200 px-4 py-2.5 focus:outline-none focus:border-[var(--primary)]">
-          </div>
-          <div>
-            <label class="block text-sm font-semibold mb-1.5">Votre besoin</label>
-            <textarea name="message" rows="3" required class="w-full rounded-lg border border-slate-200 px-4 py-2.5 focus:outline-none focus:border-[var(--primary)]"></textarea>
-          </div>
-          <button type="submit" class="w-full rounded-xl bg-[var(--primary)] hover:bg-[var(--primary-dark)] text-white font-bold py-3.5 transition">Demander mon devis gratuit</button>
-          <p id="formMsg" class="text-sm text-center hidden"></p>
-        </form>
-      </div>
     </div>
   </section>
 
-  <footer class="bg-[var(--ink)] text-slate-300">
-    <div class="max-w-6xl mx-auto px-4 py-12 grid sm:grid-cols-2 md:grid-cols-3 gap-8 text-sm">
+  <!-- ================= CONTACT / DEVIS ================= -->
+  <section id="devis" class="max-w-6xl mx-auto px-5 py-20 md:py-28 grid md:grid-cols-2 gap-12 items-start">
+    <div class="reveal">
+      <p class="eyebrow mb-4">Devis gratuit</p>
+      <h2 class="text-3xl md:text-4xl mb-4">Parlons de votre projet</h2>
+      <p class="text-[var(--muted)] text-lg mb-8">Le plus rapide, c'est de nous appeler. Sinon, laissez vos coordonnées et on vous rappelle.</p>
+      <div class="space-y-4">
+        <a href="tel:+33622831730" class="flex items-center gap-3 font-bold text-lg group"><span class="w-11 h-11 rounded-2xl bg-[var(--primary)] text-white flex items-center justify-center group-hover:bg-[var(--primary-dark)] transition"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>06 22 83 17 30</a>
+        <p class="flex items-center gap-3 text-[var(--ink)]"><span class="w-11 h-11 rounded-2xl bg-[var(--card)] border border-[var(--line)] flex items-center justify-center text-[var(--accent-2)]"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg></span>bonninmichel31@gmail.com</p>
+        <p class="flex items-center gap-3 text-[var(--ink)]"><span class="w-11 h-11 rounded-2xl bg-[var(--card)] border border-[var(--line)] flex items-center justify-center text-[var(--accent-2)]"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>Du lundi au vendredi, 8h à 18h. Samedi sur rendez-vous.</p>
+      </div>
+    </div>
+    <div class="reveal">
+      <form id="devisForm" class="card p-6 md:p-8 shadow-sm space-y-4">
+        <input type="hidden" name="access_key" value="CLE_WEB3FORMS_A_CREER">
+        <input type="hidden" name="subject" value="Nouvelle demande de devis depuis le site Michel Bonnin Plâtrerie Plomberie">
+        <input type="checkbox" name="botcheck" class="hidden" style="display:none" aria-hidden="true">
+        <div>
+          <label class="block text-sm font-semibold mb-1.5">Votre nom</label>
+          <input name="name" required class="w-full rounded-xl border border-[var(--line)] bg-white px-4 py-3 focus:outline-none focus:border-[var(--primary)]">
+        </div>
+        <div>
+          <label class="block text-sm font-semibold mb-1.5">Téléphone</label>
+          <input name="phone" type="tel" required class="w-full rounded-xl border border-[var(--line)] bg-white px-4 py-3 focus:outline-none focus:border-[var(--primary)]">
+        </div>
+        <div>
+          <label class="block text-sm font-semibold mb-1.5">Email (facultatif)</label>
+          <input name="email" type="email" class="w-full rounded-xl border border-[var(--line)] bg-white px-4 py-3 focus:outline-none focus:border-[var(--primary)]">
+        </div>
+        <div>
+          <label class="block text-sm font-semibold mb-1.5">Votre besoin</label>
+          <textarea name="message" rows="3" required class="w-full rounded-xl border border-[var(--line)] bg-white px-4 py-3 focus:outline-none focus:border-[var(--primary)]"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary w-full">Demander mon devis gratuit</button>
+        <p id="formMsg" class="text-sm text-center hidden"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-[var(--ink)] text-white/70">
+    <div class="max-w-6xl mx-auto px-5 py-14 grid sm:grid-cols-2 md:grid-cols-3 gap-8 text-sm">
       <div>
-        <p class="font-extrabold text-white text-lg display mb-2">Michel Bonnin Plâtrerie Plomberie</p>
-        <p>Plaquiste et plombier à Labastide Saint Pierre et alentours.</p>
+        <p class="disp font-bold text-white text-xl mb-2">Michel Bonnin</p>
+        <p>Plaquiste et plombier à Labastide Saint Pierre et alentours. Plus de 20 ans de métier, devis gratuit et travail garanti.</p>
       </div>
       <div>
-        <p class="font-bold text-white mb-2">Contact</p>
-        <p><a href="tel:+33622831730" class="hover:text-white">06 22 83 17 30</a></p>
-        <p><a href="mailto:bonninmichel31@gmail.com" class="hover:text-white">bonninmichel31@gmail.com</a></p>
+        <p class="font-bold text-white mb-3">Contact</p>
+        <p class="mb-1"><a href="tel:+33622831730" class="hover:text-white">06 22 83 17 30</a></p>
+        <p class="mb-1"><a href="mailto:bonninmichel31@gmail.com" class="hover:text-white">bonninmichel31@gmail.com</a></p>
         <p>Du lundi au vendredi, 8h à 18h.</p>
       </div>
       <div>
-        <p class="font-bold text-white mb-2">Informations</p>
-        <p>Labastide Saint Pierre, Campsas, Montauban</p>
-        <p>SIRET en cours d'immatriculation</p>
+        <p class="font-bold text-white mb-3">Informations</p>
+        <p class="mb-1">Labastide Saint Pierre, Campsas, Montauban</p>
+        <p class="mb-1">SIRET en cours d'immatriculation</p>
+        <p><a href="mentions-legales.html" class="hover:text-white">Mentions légales</a></p>
       </div>
     </div>
-    <div class="border-t border-white/10 py-5 text-center text-xs text-slate-400">
+    <div class="border-t border-white/10 py-5 text-center text-xs text-white/50">
       © <span id="year"></span> Michel Bonnin Plâtrerie Plomberie. Site réalisé par Movari Easy.
     </div>
   </footer>
 
-  <a href="https://wa.me/33622831730" target="_blank" rel="noopener" class="fixed bottom-20 md:bottom-6 right-4 z-50 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-lg" style="width:52px;height:52px" aria-label="WhatsApp">
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.157 5.335 5.493 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.477-.755zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  <!-- ================= BOUTONS FLOTTANTS ================= -->
+  <a href="https://wa.me/33622831730" target="_blank" rel="noopener" class="fixed bottom-20 md:bottom-6 right-4 z-50 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-lg hover:scale-105 transition" style="width:54px;height:54px" aria-label="Contacter sur WhatsApp">
+    <svg width="27" height="27" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.157 5.335 5.493 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.477-.755zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
   </a>
-  <a href="tel:+33622831730" class="md:hidden fixed bottom-0 inset-x-0 z-50 bg-[var(--primary)] text-white font-bold py-4 text-center flex items-center justify-center gap-2">
+  <a href="tel:+33622831730" class="md:hidden fixed bottom-0 inset-x-0 z-50 bg-[var(--primary)] text-white font-bold py-4 text-center flex items-center justify-center gap-2 shadow-[0_-6px_20px_-8px_rgba(0,0,0,.4)]">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
     Appeler maintenant
   </a>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    const io = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target);} }); }, {threshold:.12});
+
+    // Révélation au défilement
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); } });
+    }, {threshold:.12});
     document.querySelectorAll('.reveal, .reveal-stagger').forEach(el=>io.observe(el));
-    const form=document.getElementById('devisForm'); const msg=document.getElementById('formMsg');
-    form.addEventListener('submit', async (ev)=>{ ev.preventDefault(); const btn=form.querySelector('button[type=submit]'); btn.disabled=true; btn.textContent='Envoi en cours...';
-      try{ const res=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)}); const data=await res.json(); msg.classList.remove('hidden');
-        if(data.success){ form.reset(); msg.textContent='Merci, votre demande est envoyée. On vous rappelle vite.'; msg.className='text-sm text-center text-green-600'; }
-        else { msg.textContent='Un souci est survenu. Appelez nous au 06 22 83 17 30.'; msg.className='text-sm text-center text-red-600'; }
-      }catch(e){ msg.classList.remove('hidden'); msg.textContent='Un souci est survenu. Appelez nous au 06 22 83 17 30.'; msg.className='text-sm text-center text-red-600'; }
+
+    // Compteurs animés
+    const countUp = (el)=>{
+      const target = parseFloat(el.dataset.count); const suffix = el.dataset.suffix || '';
+      const dur = 1500; const t0 = performance.now();
+      const step = (now)=>{ const p = Math.min((now-t0)/dur,1); const e = 1-Math.pow(1-p,3);
+        el.textContent = Math.round(target*e) + suffix; if(p<1) requestAnimationFrame(step); };
+      requestAnimationFrame(step);
+    };
+    const countObs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ countUp(e.target); countObs.unobserve(e.target); } });
+    }, {threshold:.5});
+    document.querySelectorAll('.cnt').forEach(el=>countObs.observe(el));
+
+    // Comparateur avant / après
+    const ba = document.getElementById('ba'); const baRange = document.getElementById('baRange');
+    if(ba && baRange){ baRange.addEventListener('input', ()=>{ ba.style.setProperty('--pos', baRange.value + '%'); }); }
+
+    // Envoi du formulaire de devis via Web3Forms (sans quitter la page)
+    const form = document.getElementById('devisForm'); const msg = document.getElementById('formMsg');
+    form.addEventListener('submit', async (ev)=>{
+      ev.preventDefault();
+      const btn = form.querySelector('button[type=submit]');
+      btn.disabled = true; btn.textContent = 'Envoi en cours...';
+      try{
+        const res = await fetch('https://api.web3forms.com/submit', { method:'POST', headers:{'Accept':'application/json'}, body:new FormData(form) });
+        const data = await res.json(); msg.classList.remove('hidden');
+        if(data.success){ form.reset(); msg.textContent = 'Merci, votre demande est envoyée. On vous rappelle vite.'; msg.className='text-sm text-center text-green-600'; }
+        else { msg.textContent = 'Un souci est survenu. Appelez nous au 06 22 83 17 30.'; msg.className='text-sm text-center text-red-600'; }
+      }catch(e){ msg.classList.remove('hidden'); msg.textContent = 'Un souci est survenu. Appelez nous au 06 22 83 17 30.'; msg.className='text-sm text-center text-red-600'; }
       finally{ btn.disabled=false; btn.textContent='Demander mon devis gratuit'; }
     });
   </script>
